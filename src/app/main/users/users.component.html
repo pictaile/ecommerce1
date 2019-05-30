@@ -1,0 +1,38 @@
+<div class="loader" *ngIf="loader">
+<mat-spinner ></mat-spinner> 
+</div>
+
+
+<table class="user-list">
+
+    <tr>
+	 <th><div class="header-item">Image</div></th>
+	 <th><div class="header-item">Id</div></th>
+	 <th><div class="header-item">Email</div></th>
+	 <th><div class="header-item">FName</div></th>
+	 <th><div class="header-item">LName</div></th>
+	</tr>
+    <tr *ngFor="let item of data" [routerLink]="['/person/' + item.id]">
+		<td><div class="person-item"><img  [src]="item.avatar"/></div></td>
+		<td><div class="person-item">{{item.id}}</div></td>
+		<td><div class="person-item">{{item.email}}</div></td>
+		<td><div class="person-item">{{item.first_name}}</div></td>
+		<td><div class="person-item">{{item.last_name}}</div></td>
+	</tr> 
+  </table>
+
+
+
+<mat-paginator [length]="length"
+              [pageSize]="pageSize"
+              [pageSizeOptions]="pageSizeOptions"
+              (page)="getUsers($event)">
+</mat-paginator>
+
+<div *ngIf="pageEvent">
+  <h5>Page Change Event Properties</h5>
+  <div>List length: {{pageEvent.length}}</div>
+  <div>Page size: {{pageEvent.pageSize}}</div>
+  <div>Page index: {{pageEvent.pageIndex}}</div>
+</div>
+

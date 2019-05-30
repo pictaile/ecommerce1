@@ -1,0 +1,91 @@
+<div class="wrapper">
+
+<div class="bkms" [routerLink]="['/users/1']">Back</div>
+<div class="loader" *ngIf="loader">
+<mat-spinner ></mat-spinner> 
+</div>
+
+
+ <mat-accordion class="example-headers-align" *ngIf="data">
+  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Person data
+      </mat-panel-title>
+	  
+    </mat-expansion-panel-header>
+
+  </mat-expansion-panel>
+
+  
+  
+  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+       avatar
+      </mat-panel-title>
+	  
+	  <mat-panel-description>
+       <img src="data.avatar" >
+      </mat-panel-description>
+	  
+	  
+    </mat-expansion-panel-header>
+
+  </mat-expansion-panel>
+
+  
+  
+  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+       email
+      </mat-panel-title>
+	  
+	  
+	  <mat-panel-description>
+       {{data.email}}
+      </mat-panel-description>
+	  
+    </mat-expansion-panel-header>
+
+  </mat-expansion-panel>
+
+  
+  
+    
+  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+       first name and  last name
+      </mat-panel-title>
+	  
+	  <mat-panel-description>
+       {{data.first_name}}
+      </mat-panel-description>
+	    <mat-panel-description>
+       {{data.last_name}}
+      </mat-panel-description>
+	    <mat-panel-description>
+       {{data.id}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+  </mat-expansion-panel>
+
+  
+  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+       id
+      </mat-panel-title>
+	    <mat-panel-description>
+       {{data.id}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+  </mat-expansion-panel>
+</mat-accordion>
+
+
+</div>	
