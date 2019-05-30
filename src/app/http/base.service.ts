@@ -7,7 +7,7 @@ import {shareReplay} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class BaseService {
-  protected caches;
+  protected caches ={};
   protected configUrl = ' https://reqres.in/api/users';
   
   constructor(protected http: HttpClient) {

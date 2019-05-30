@@ -6,11 +6,11 @@ import { PersonComponent } from './main/person/person.component';
 const routes: Routes = [
 	{
 		path: '',
-		redirectTo: 'users/1', 
+		redirectTo: 'users', 
 		pathMatch: 'full'
 	},
 	{
-		path: 'users/:page',
+		path: 'users',
 		component: UsersComponent
 	},
 	

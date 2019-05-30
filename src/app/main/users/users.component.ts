@@ -24,15 +24,13 @@ export class UsersComponent implements OnInit {
 
   public getUsers(page?: any) {
 	  this.loader = true;
-	this.userService.getList(this.pageIndex + 1).subscribe(
+	  if(page) {
+		  this.pageInit(page);
+	  }
+	 	
+	this.userService.getList(this.pageIndex).subscribe(
 		(res:any) => {
 			this.data = res.data;
-			if(page) {
-				this.length = page.length;
-            this.pageSize = page.pageSize;
-            this.pageIndex = page.pageIndex;
-			}
-			
 			this.loader = false;
 			
 		},
@@ -42,6 +40,12 @@ export class UsersComponent implements OnInit {
 			alert('some error')
 		}
 	);
+  }
+  
+  public pageInit(page) {
+	this.length = page.length;
+	this.pageSize = page.pageSize;
+	this.pageIndex = page.pageIndex;
   }
 }
 

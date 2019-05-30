@@ -15,7 +15,7 @@ export class UserService extends BaseService {
   public getList(page) {
 	const request$ = this.http.get(`${this.configUrl}?page=${page}`);
 
-    return request$;	
+    return this.sendWithCache(request$,page);	
   }
   
   
