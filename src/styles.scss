@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+@mixin random-bgr(){
+  background: rgb(random(255), random(255), random(255));
+}
+
+body {
+  @include random-bgr();
+  font-family: Arial;
+}
+
+.user-list {
+  width: 90%;
+  margin: auto;
+  background: #fff;
+  padding:20px;
+  border: 1px solid #d1d1d1;
+}
+
+.header-item {
+   padding: 20px;
+   border-bottom:  1px solid #d1d1d1;
+}
+.person-item {
+    text-align: center;
+	padding: 20px;
+	
+}
+ .bkms {
+  padding: 20px;
+  font-size: 20px;
+}
+.loader {
+	position: absolute;
+	top: 100px;
+	left: 50%;
+  margin: 40px auto;
+  width: 100px;
+  text-align: center;
+}
+
+.wrapper {
+  width: 80%;
+  margin: auto;
+}
